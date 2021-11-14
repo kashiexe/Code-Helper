@@ -8,8 +8,8 @@ const client = new Discord.Client()
 const fs = require("fs")
 const chalk = require("chalk")
 const db = require("quick.db")
-const clib = require("./src/main/client/clib.js")
 const pckjson = require("./package.json")
+const clib = require("./src/main/client/clib.js")
 
 // Web
 app.engine('html', require("ejs").renderFile)
@@ -28,11 +28,43 @@ app.get("/assets/:f", function(req, res) {
 })
 
 app.get("/api/tag/:tag", function(req, res) {
-  res.status(200).send(db.get(req.params.tag))
+  let info = db.get(req.params.tag)
+  let views = db.get(`${req.params.tag}_views`)
+  if(!views) {
+    views = 0
+  }
+  let verified = db.get(`${req.params.tag}_verified`)
+  if(!verified) {
+    verified = false
+  }
+  let finalobj = {
+    name: info.name,
+    content: info.content,
+    author: info.author,
+    views: views,
+    verified: verified
+  }
+  res.status(200).send(finalobj)
 })
 
 app.get("/api/alltags", function(req, res) {
   res.status(200).send(db.get(`tags`))
+})
+
+app.get('/api/users/:id', function(req, res) {
+  let verified = db.get(`${req.params.id}_verified`)
+  if(!verified) {
+    verified = false
+  }
+  let vip = db.get(`${req.params.id}_vip`)
+  if(!vip) {
+    vip = false
+  }
+  res.status(200).send({
+    id: req.params.id,
+    verified: verified,
+    vip: vip
+  })
 })
 
 app.post("/api/newTag", function(req, res) {

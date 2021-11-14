@@ -25,12 +25,18 @@ module.exports = {
         }
         let randomcolors = clib.color.random
         let random = randomcolors[Math.floor(Math.random() * randomcolors.length)]
+        let user = client.users.cache.get(tagobj.author)
+        if(!user) {
+          user = tagobj.author
+        } else {
+          user = user.tag
+        }
         let embed = new Discord.MessageEmbed()
         .setTitle(`${args[0]} ${emoji}`)
         .addField(`Content`, tagobj.content)
         .setColor(random)
         .setDescription(`**${db.get(`${args[0]}_views`)}** ${clib.emoji.views} **${upvotes}** ${clib.emoji.upvote} **${downvotes}** ${clib.emoji.downvote}`)
-        .setFooter(`by ${client.users.cache.get(tagobj.author).tag}`)
+        .setFooter(`by ${user}`)
         message.channel.send(embed)
       }
     }

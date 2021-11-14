@@ -27,13 +27,13 @@ module.exports = {
           }
         }
       } else {
-        if(db.get(`${message.mentions.users.first()}_verified`) == true) {
+        if(db.get(`${message.mentions.users.first().id}_verified`) == true) {
           let embed = new Discord.MessageEmbed()
           .setColor("RED")
           .setDescription(`${clib.emoji.error} This user is already verified!`)
           message.channel.send(embed)
         } else {
-          db.set(`${message.mentions.users.first()}_verified`, true)
+          db.set(`${message.mentions.users.first().id}_verified`, true)
           let embed = new Discord.MessageEmbed()
           .setColor(clib.color.lgreen)
           .setDescription(`${clib.emoji.verified} the user \`${message.mentions.users.first().username}\` got verified with success!`)

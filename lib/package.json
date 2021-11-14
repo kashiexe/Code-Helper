@@ -1,0 +1,23 @@
+{
+  "name": "codehelper.api",
+  "version": "2.1.1",
+  "description": "Easier API for codehelper",
+  "main": "lib.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Success\""
+  },
+  "keywords": [
+    "clib.js",
+    "code helper",
+    "codehelper",
+    "ch"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0"
+  }
+}
