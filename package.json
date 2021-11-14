@@ -1,6 +1,6 @@
 {
   "name": "Code-Helper",
-  "version": "v4.2.2",
+  "version": "v4.2.3",
   "description": "Code helper is a discord bot whose purpose is to well... help your coding experience! You can either share your code with other members or just use some more specific commands for code helper to give the best results",
   "main": "index.js",
   "directories": {

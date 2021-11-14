@@ -1,4 +1,4 @@
-const clib = require('./lib/lib.js')
+const clib = require('../lib/lib.js')
 
 clib.create({
   name: 'Working',
