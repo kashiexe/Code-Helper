@@ -1,6 +1,6 @@
 {
   "name": "Code-Helper",
-  "version": "v4.2.3",
+  "version": "v4.3.0",
   "description": "Code helper is a discord bot whose purpose is to well... help your coding experience! You can either share your code with other members or just use some more specific commands for code helper to give the best results",
   "main": "index.js",
   "directories": {
@@ -15,7 +15,8 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "quick.db": "^7.1.3",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "yarn": "^1.22.17"
   },
   "devDependencies": {},
   "scripts": {

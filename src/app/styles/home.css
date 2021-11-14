@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
 body {
-  background: rgb(0,226,75);
-  background: linear-gradient(90deg, rgba(0,226,75,1) 0%, rgba(36,230,255,1) 100%);
+  background-color: #FBAB7E;
 }
 
 .docs {
@@ -14,21 +13,40 @@ body {
   background-color: transparent;
   padding: 5px 5px;
   border-radius: 5px;
-  width: 65px;
+  width: 90px;
   border: 2px solid #ffffff;
   float: right;
 }
 
 .docs:hover {
-  background-color: #ffffff;
-  color: #000;
-}
-
-.docs:active {
   position: relative;
   top: 1px;
 }
 
 .book {
   margin-right: 5px;
+}
+
+.discord {
+  margin-right: 5px;
+}
+
+.Server {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  background-color: transparent;
+  padding: 5px 5px;
+  border-radius: 5px;
+  width: 75px;
+  border: 2px solid #ffffff;
+  float: right;
+  margin-right: 5px;
+}
+
+.Server:hover {
+  position: relative;
+  top: 1px;
 }
